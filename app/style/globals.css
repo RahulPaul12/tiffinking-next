@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: rgb(207,0,6);
-  --color-primary-light : rgb(255,237,238);
-  --color-negative : rgb(233,60,60);
+  --color-primary: var(--primary, rgb(207,0,6));
+  --color-primary-light: var(--primary-light, color-mix(in srgb, var(--primary, rgb(207,0,6)) 12%, white));
+  --color-negative: rgb(233,60,60);
   --color-black: rgb(0,0,0);
-  --font-rubik : 'Rubik', sans-serif;
+  --font-rubik: 'Rubik', sans-serif;
 }
+
 
 @layer base {
     /* container content */

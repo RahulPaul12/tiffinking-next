@@ -1,4 +1,9 @@
+'use client'
+import useSetting from "@/lib/api/setting";
+
 const FooterLayout = () => {
+    const { setting } = useSetting()
+    console.log(setting)
     return (
     <section className="pt-8 sm:pt-12 bg-primary lg:mb-0 mb-14">
         <div className="container flex md:flex-row flex-col items-start justify-between gap-6">
@@ -34,8 +39,8 @@ const FooterLayout = () => {
             <div className="text-white">
                 <h2 className="text-lg font-semibold mb-2">Download Our Apps</h2>
                 <div className="flex gap-3 items-center mb-6">
-                    <img src="../../images/footer/appStore.png" alt="appstore"/>
-                    <img src="../../images/footer/playStore.png" alt="playstore"/>
+                    <img className={`${setting?.site_ios_app_link ? "block" : "hidden"}`} src="../../images/footer/appStore.png" alt="appstore"/>
+                    <img className={`${setting?.site_android_app_link ? "block" : "hidden"}`} src="../../images/footer/playStore.png" alt="playstore"/>
                 </div>
                 <div className="flex gap-2 mb-3">
                     <i className="icon-email-track text-2xl"></i>

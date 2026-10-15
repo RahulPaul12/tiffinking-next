@@ -7,6 +7,8 @@ import MobileLayout from "@/components/layouts/MobileLayout";
 
 
 
+import QueryProvider from "@/components/providers/QueryProvider";
+
 const rubik = Rubik({
   variable: "--font-rubik",
   subsets: ["latin"],
@@ -21,11 +23,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={` ${rubik.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <HeaderLayout />
+        <QueryProvider>
+          <HeaderLayout />
           {children}
-        <MobileLayout/>
-        <FooterLayout />
+          <MobileLayout />
+          <FooterLayout />
+        </QueryProvider>
       </body>
     </html>
   );
 }
+
