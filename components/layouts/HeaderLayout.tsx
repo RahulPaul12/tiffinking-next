@@ -1,12 +1,14 @@
 'use client'
 import useSticky from "@/hooks/useSticky";
+import useSetting from "@/lib/api/setting";
 
 const HeaderLayout = () => {
     const {isSticky} = useSticky();
+    const { setting } = useSetting();
     return (
     <header className={`header fixed top-0 bg-transparent left-0 w-full z-10 transition-all duration-150 ease-in-out ${isSticky ? "bg-white shadow-header" : ""}`}>
         <nav className="container flex justify-between items-center py-4 md:py-5">
-            <a href="#"><img src="../../images/tiffinKing_logo.png" alt="logo"/></a>
+            <a href="#"><img src={setting?.theme_logo} alt="logo"/></a>
             <ul className="hidden lg:flex gap-8 items-center text-sm font-medium">
                 <li className="hover:text-primary"><a href="./home.html">Home</a></li>
                 <li className="hover:text-primary"><a href="./menu-horizontal.html">Menu</a></li>

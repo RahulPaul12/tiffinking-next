@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Rubik} from "next/font/google";
 import "@/app/style/globals.css";
+import "@/public/iconly/iconly.css";
 import HeaderLayout from "@/components/layouts/HeaderLayout";
 import FooterLayout from "@/components/layouts/FooterLayout";
 import MobileLayout from "@/components/layouts/MobileLayout";
-
-
-
 import QueryProvider from "@/components/providers/QueryProvider";
 
 const rubik = Rubik({
